@@ -8,8 +8,8 @@ const findCharacterByIdService = async (id) => {
   const character = await Character.findById(id);
   return character;
 };
-const createCharacterService = async (newPersonagem) => {
-  const createdCharacter = await Character.create(newPersonagem);
+const createCharacterService = async (newCharacter) => {
+  const createdCharacter = await Character.create(newCharacter);
   return createdCharacter;
 };
 const updateCharacterService = async (id, editedCharacter) => {
