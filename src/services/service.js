@@ -16,7 +16,7 @@ const updateCharacterService = async (id, editedCharacter) => {
   const updatedCharacter = await Character.findByIdAndUpdate(
     id,
     editedCharacter,
-  );
+  ).setOptions({ returnOriginal: false });
   return updatedCharacter;
 };
 const deleteCharacterService = async (id) => {

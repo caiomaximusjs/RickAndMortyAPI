@@ -25,14 +25,6 @@ const validObjectBody = (req, res, next) => {
   }
   next();
 };
-const validAssignment = async (req, res, next) => {
-  const newCharacter = req.body;
-  const dbcharacter = await characterService.findOne(newCharacter);
-  console.log(dbcharacter);
-  if (dbcharacter !== null) {
-    return res.status(400).send({ message: 'The character already exists' });
-  }
-  next();
-};
 
-module.exports = { validAll, idValid, validObjectBody, validAssignment };
+
+module.exports = { validAll, idValid, validObjectBody};

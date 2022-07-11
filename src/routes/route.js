@@ -4,7 +4,6 @@ const {
   validAll,
   idValid,
   validObjectBody,
-  validAssignment,
 } = require('../middlewares/middleware');
 
 route.get('/characters', validAll, controllerCharacter.findCharacterController);
@@ -16,7 +15,6 @@ route.get(
 route.post(
   '/create',
   validObjectBody,
-  validAssignment,
   controllerCharacter.createCharacterController,
 );
 route.put(
